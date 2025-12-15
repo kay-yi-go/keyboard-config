@@ -1,0 +1,243 @@
+/*
+ * Copyright (c) 2020 duckyb
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+// Layer definitions
+
+#define BASE 0
+#define NUM 1
+#define MOVE 2
+#define POINT 3
+#define SETTINGS 4
+#define LANG 5
+
+
+ / {
+    behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        td_tg3: tap_toggle_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&lt 2 TAB>, <&tog 3>;
+        };
+
+        td_4x_up: tap_4x_up {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp UP>, <&U_4x>;
+        };
+
+        td_4x_down: tap_4x_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp DOWN>, <&D_4x>;
+        };
+
+        td_4x_left: tap_4x_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp LEFT>, <&L_4x>;
+        };
+
+        td_4x_right: tap_4x_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp RIGHT>, <&R_4x>;
+        };
+
+    };
+
+    macros {
+        D_4x: D_4x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN &kp DOWN &kp DOWN &kp DOWN>;
+            label = "D_4x";
+        };
+
+        U_4x: U_4x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UP &kp UP &kp UP &kp UP>;
+            label = "U_4x";
+        };
+
+        L_4x: L_4x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+            label = "L_4x";
+        };
+
+        R_4x: R_4x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT>;
+            label = "R_4x";
+        };
+
+        Lang_switch: L_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press>, <&kp LALT>,
+                <&macro_tap>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_switch";
+        };    
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <16 17>;
+            layers = <0 1 4 5>;
+        };
+
+        Switch_L4 {
+            bindings = <&tog 4>;
+            key-positions = <30 31>;
+        };
+
+        Switch_L5 {
+            bindings = <&sl 5>;
+            key-positions = <31 32>;
+        };
+
+        Go_home {
+            bindings = <&kp HOME>;
+            key-positions = <16 29>;
+            layers = <2>;
+        };
+
+        Go_end {
+            bindings = <&kp END>;
+            key-positions = <18 29>;
+            layers = <2>;
+        };
+
+        Go_pg_up {
+            bindings = <&kp PAGE_UP>;
+            key-positions = <7 29>;
+            layers = <2>;
+        };
+
+        Go_pg_down {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <17 29>;
+            layers = <2>;
+        };
+
+        Sys_reset {
+            bindings = <&sys_reset>;
+            key-positions = <20 24>;
+            layers = <4>;
+        };
+
+        Bootloader {
+            bindings = <&bootloader>;
+            key-positions = <21 24>;
+            layers = <4>;
+        };
+    };
+
+    keymap {
+    compatible = "zmk,keymap";
+
+    // Base alpha layer
+
+    default {
+        label = "Base";
+        bindings = <
+        &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
+        &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
+        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
+                                        &mt LCTRL BSPC &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+        >;
+    };
+
+    // Numbers and symbols
+
+    num_sym {
+        label = "Num";
+        bindings = <
+        &kp GRAVE   &kp ESC     &trans  &trans          &trans         &kp BSLH        &kp LBKT         &kp RBKT        &kp MINUS       &kp EQUAL 
+        &kp N1      &kp N2      &kp N3  &kp N4          &kp N5         &kp N6          &kp N7           &kp N8          &kp N9          &kp N0
+        &trans      &trans      &trans  &trans          &trans         &trans          &trans           &trans          &kp DEL         &kp APOS
+                                        &trans          &trans         &trans          &trans
+        >;
+    };
+
+    // moves cursor
+
+    move {
+        label = "Move";
+        bindings = <
+        &trans      &trans      &trans   &trans          &trans        &trans           &trans          &td_4x_up      &trans         &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &td_4x_left     &td_4x_down    &td_4x_right   &msc SCRL_DOWN 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans         &trans         &trans 
+                                         &trans          &trans        &trans           &trans
+        >;
+    };
+
+    // mouse pointing
+
+    pointing {
+        label = "Point";
+        bindings = <
+        &trans      &trans      &trans   &trans          &trans        &trans           &trans          &mmv MOVE_UP      &trans            &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &msc SCRL_DOWN
+        &trans      &trans      &trans   &trans          &trans        &mkp MB2         &trans          &trans            &trans            &trans 
+                                         &trans          &trans        &mkp MB1         &trans
+        >;
+
+    };
+
+    // bluetooth, system, and functions
+
+    system {
+        label = "Sys";
+        bindings = <
+        &kp F1      &kp F2          &kp F3          &kp F4              &kp F5            &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
+        &bt BT_NXT  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_CLR        &none           &none           &none           &kp F11         &kp F12  
+        &none       &none           &kp LG(P)       &kp LG(LS(S))       &none             &kp C_BRI_DN    &kp C_BRI_UP    &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP
+                                                    &trans              &trans            &trans          &trans
+        >; 
+    };
+
+    // language settings
+
+    language {
+        label = "Lang";
+        bindings = <
+        &trans          &trans      &trans          &trans          &trans      &Lang_switch    &trans         &trans          &trans          &trans
+        &kp CAPS        &none       &none           &none           &none       &kp LA(LS(6))   &kp LA(LS(7))  &kp LA(LS(8))   &kp LA(LS(9))   &kp LA(LS(0))
+        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4       &kp INT5       &kp LANG5
+                                                    &trans          &trans      &trans          &trans
+        >;
+    };
+ };
+ };
