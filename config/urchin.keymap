@@ -119,12 +119,12 @@
 
         Switch_L4 {
             bindings = <&tog 4>;
-            key-positions = <30 31>;
+            key-positions = <31 32>;
         };
 
         Switch_L5 {
             bindings = <&sl 5>;
-            key-positions = <31 32>;
+            key-positions = <30 31>;
         };
 
         Go_home {
