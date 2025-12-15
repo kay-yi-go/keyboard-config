@@ -17,7 +17,7 @@
 #define POINT 3
 #define SETTINGS 4
 #define LANG 5
-
+#define NAV 6
 
  / {
     behaviors {
@@ -25,9 +25,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <50>;
+            require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -36,6 +36,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <50>;
             bindings = <&lt 2 TAB>, <&tog 3>;
+        };
+
+        td_sl5: tap_stickyl_5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&mt LSHIFT SPACE>, <&sl 5>;
         };
 
         td_4x_up: tap_4x_up {
@@ -65,7 +72,6 @@
             tapping-term-ms = <50>;
             bindings = <&kp RIGHT>, <&R_4x>;
         };
-
     };
 
     macros {
@@ -132,30 +138,6 @@
             key-positions = <30 31>;
         };
 
-        Go_home {
-            bindings = <&kp HOME>;
-            key-positions = <16 29>;
-            layers = <2>;
-        };
-
-        Go_end {
-            bindings = <&kp END>;
-            key-positions = <18 29>;
-            layers = <2>;
-        };
-
-        Go_pg_up {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <7 29>;
-            layers = <2>;
-        };
-
-        Go_pg_down {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <17 29>;
-            layers = <2>;
-        };
-
         Sys_reset {
             bindings = <&sys_reset>;
             key-positions = <20 24>;
@@ -173,19 +155,17 @@
     compatible = "zmk,keymap";
 
     // Base alpha layer
-
     default {
         label = "Base";
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
         &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &mt LCTRL BSPC &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+                                        &mt LCTRL BSPC &td_sl5    &lt 1 ENTER     &td_tg3
         >;
     };
 
     // Numbers and symbols
-
     num_sym {
         label = "Num";
         bindings = <
@@ -197,19 +177,17 @@
     };
 
     // moves cursor
-
     move {
         label = "Move";
         bindings = <
-        &trans      &trans      &trans   &trans          &trans        &trans           &trans          &td_4x_up      &trans         &trans
-        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &td_4x_left     &td_4x_down    &td_4x_right   &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans         &trans         &trans 
+        &trans      &trans      &trans   &trans          &kp Y         &trans           &trans          &td_4x_up      &trans         &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &td_4x_left      &td_4x_down    &td_4x_right   &msc SCRL_DOWN 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans         &trans         &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
 
     // mouse pointing
-
     pointing {
         label = "Point";
         bindings = <
@@ -222,7 +200,6 @@
     };
 
     // bluetooth, system, and functions
-
     system {
         label = "Sys";
         bindings = <
@@ -234,13 +211,23 @@
     };
 
     // language settings
-
     language {
         label = "Lang";
         bindings = <
         &trans          &trans      &trans          &trans          &trans      &Lang_switch    &trans         &trans          &trans          &trans
         &kp CAPS        &none       &none           &none           &none       &kp LA(LS(6))   &kp LA(LS(7))  &kp LA(LS(8))   &kp LA(LS(9))   &kp LA(LS(0))
         &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4       &kp INT5       &kp LANG5
+                                                    &trans          &trans      &trans          &trans
+        >;
+    };
+
+    // momentary navigation
+    navigation {
+        label = "Nav";
+        bindings = <
+        &trans          &trans      &trans          &trans          &trans      &trans          &trans      &kp PAGE_UP       &trans          &trans      
+        &trans          &trans      &trans          &trans          &trans      &trans          &kp HOME    &kp PAGE_DOWN     &kp END         &trans
+        &trans          &trans      &trans          &trans          &trans      &trans          &trans      &trans            &trans          &trans      
                                                     &trans          &trans      &trans          &trans
         >;
     };
