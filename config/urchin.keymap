@@ -118,7 +118,7 @@
         };
 
         Switch_L2 {
-            bindings = <&tog 4>;
+            bindings = <&tog 2>;
             key-positions = <32 33>;
         };
 
