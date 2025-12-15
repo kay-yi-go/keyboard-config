@@ -34,35 +34,35 @@
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&lt 2 TAB>, <&tog 3>;
         };
 
         td_4x_up: tap_4x_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp UP>, <&U_4x>;
         };
 
         td_4x_down: tap_4x_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp DOWN>, <&D_4x>;
         };
 
         td_4x_left: tap_4x_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp LEFT>, <&L_4x>;
         };
 
         td_4x_right: tap_4x_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp RIGHT>, <&R_4x>;
         };
 
@@ -115,6 +115,11 @@
             bindings = <&kp ESCAPE>;
             key-positions = <16 17>;
             layers = <0 1 4 5>;
+        };
+
+        Switch_L2 {
+            bindings = <&tog 4>;
+            key-positions = <32 33>;
         };
 
         Switch_L4 {
