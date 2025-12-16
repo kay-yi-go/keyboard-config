@@ -159,7 +159,7 @@
         bindings = <
         &kp GRAVE   &kp ESC     &trans  &trans          &trans         &kp BSLH        &kp LBKT         &kp RBKT        &kp MINUS       &kp EQUAL 
         &kp N1      &kp N2      &kp N3  &kp N4          &kp N5         &kp N6          &kp N7           &kp N8          &kp N9          &kp N0
-        &trans      &trans      &trans  &trans          &trans         &td_sl5         &trans           &trans          &kp DEL         &kp APOS
+        &trans      &trans      &trans  &trans          &trans         &trans          &td_sl5          &DEL          &kp PLUS         &kp APOS
                                         &trans          &trans         &trans          &trans
         >;
     };
@@ -170,7 +170,7 @@
         bindings = <
         &trans      &trans      &trans   &trans          &kp Y         &trans           &U_4x          &kp UP       &D_4x         &trans
         &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT       &kp DOWN     &kp RIGHT     &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &td_tg3           &trans         &trans       &trans        &mo 6 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &td_tg3         &trans       &trans        &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
