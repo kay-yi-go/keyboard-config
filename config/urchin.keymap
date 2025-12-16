@@ -34,15 +34,15 @@
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <20>;
             bindings = <&lt 2 TAB>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
-            bindings = <&mt LCTRL BSPC>, <&sl 5>;
+            tapping-term-ms = <20>;
+            bindings = <&ht LCTRL BSPC>, <&sl 5>;
         };
 
         td_4x_up: tap_4x_up {
@@ -129,7 +129,7 @@
         };
 
         Switch_L4 {
-            bindings = <&tog 4>;
+            bindings = <&sl 4>;
             key-positions = <31 32>;
         };
 
@@ -160,11 +160,11 @@
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
-        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &td_sl5        &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+        &kp Z       &kp X       &kp C   &kp V          &ht LALT B          &ht RSHIFT N    &ht RALT M       &kp COMMA       &kp DOT         &kp SLASH
+                                        &td_sl5        &ht LSHIFT SPACE    &lt 1 ENTER     &td_tg3
         >;
     };
-
+pppp
     // Numbers and symbols
     num_sym {
         label = "Num";
@@ -180,9 +180,9 @@
     move {
         label = "Move";
         bindings = <
-        &trans      &trans      &trans   &trans          &kp Y         &trans           &trans          &td_4x_up      &trans         &trans
-        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &td_4x_left      &td_4x_down    &td_4x_right   &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans         &trans         &mo 6 
+        &trans      &trans      &trans   &trans          &kp Y         &trans           &L_4x           &kp UP      &R_4x         &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT        &kp DOWN    &kp RIGHT     &msc SCRL_DOWN 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans      &trans        &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
@@ -203,10 +203,10 @@
     system {
         label = "Sys";
         bindings = <
-        &kp F1      &kp F2          &kp F3          &kp F4              &kp F5            &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
-        &bt BT_NXT  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_CLR        &none           &none           &none           &kp F11         &kp F12  
-        &none       &studio_unlock           &kp LG(P)       &kp LG(LS(S))       &none             &kp C_BRI_DN    &kp C_BRI_UP    &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP
-                                                    &trans              &trans            &trans          &trans
+        &kp F1      &kp F2              &kp F3          &kp F4              &kp F5            &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
+        &bt BT_NXT  &bt BT_SEL 0        &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_CLR        &none           &none           &none           &kp F11         &kp F12  
+        &none       &studio_unlock      &kp LG(P)       &kp LG(LS(S))       &none             &kp C_BRI_DN    &kp C_BRI_UP    &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP
+                                                        &trans              &trans            &trans          &trans
         >; 
     };
 
@@ -216,7 +216,7 @@
         bindings = <
         &trans          &trans      &trans          &trans          &trans      &Lang_switch    &trans         &trans          &trans          &trans
         &kp CAPS        &none       &none           &none           &none       &kp LA(LS(6))   &kp LA(LS(7))  &kp LA(LS(8))   &kp LA(LS(9))   &kp LA(LS(0))
-        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4       &kp INT5       &kp LANG5
+        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
                                                     &trans          &trans      &trans          &trans
         >;
     };
