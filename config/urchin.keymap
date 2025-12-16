@@ -154,7 +154,6 @@
                 <&macro_release>, <&kp LALT>;
             label = "L_NE";
         };
-
     };
 
     combos {
@@ -264,7 +263,7 @@
         label = "Lang";
         bindings = <
         &trans          &trans      &trans          &trans          &trans      &Lang_switch    &trans         &trans          &trans          &trans
-        &kp CAPS        &none       &none           &none           &none       &kp LA(LS(6))   &kp LA(LS(7))  &kp LA(LS(8))   &kp LA(LS(9))   &kp LA(LS(0))
+        &kp CAPS        &none       &none           &none           &none       &L_NE           &L_ZH          &L_EN           &L_KO           &L_JA
         &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
                                                     &trans          &trans      &trans          &trans
         >;
