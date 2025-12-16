@@ -26,8 +26,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <20>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
@@ -37,8 +37,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <20>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
             bindings = <&mo>, <&kp>;
             require-prior-idle-ms = <0>;
             display-name = "Layer-Tap";
@@ -48,8 +48,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <20>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
             display-name = "Hold-Tap";
@@ -58,42 +58,42 @@
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&lt 2 TAB>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&mt LCTRL BSPC>, <&sl 5>;
         };
 
         td_4x_up: tap_4x_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&kp UP>, <&U_4x>;
         };
 
         td_4x_down: tap_4x_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&kp DOWN>, <&D_4x>;
         };
 
         td_4x_left: tap_4x_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&kp LEFT>, <&L_4x>;
         };
 
         td_4x_right: tap_4x_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <20>;
+            tapping-term-ms = <50>;
             bindings = <&kp RIGHT>, <&R_4x>;
         };
     };
