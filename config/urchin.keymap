@@ -25,7 +25,7 @@
          mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <150>;
             quick-tap-ms = <100>;
             require-prior-idle-ms = <0>;
@@ -36,7 +36,7 @@
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <150>;
             quick-tap-ms = <100>;
             bindings = <&mo>, <&kp>;
@@ -55,6 +55,17 @@
             display-name = "Hold-Tap";
         };
 
+        ht_td: ht_in_td {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <0>;
+            bindings = <&kp>, <&kp>;
+            display-name = "HT-in-TD";
+        };
+
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -66,7 +77,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <50>;
-            bindings = <&mt LSHIFT SPACE>, <&sl 5>;
+            bindings = <&ht_td LSHIFT SPACE>, <&sl 5>;
         };
     };
 
@@ -139,7 +150,7 @@
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
         &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &mt LCTRL BSPC        &td_sl5      &lt 1 ENTER     &td_tg3
+                                        &ht LCTRL BSPC        &td_sl5      &lt 1 ENTER     &td_tg3
         >;
     };
 
