@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/behaviors.h>
 
 // Layer definitions
 
@@ -21,14 +22,35 @@
 
  / {
     behaviors {
+         mt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            require-prior-idle-ms = <0>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap";
+        };
+
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <100>;
+            bindings = <&mo>, <&kp>;
+            require-prior-idle-ms = <0>;
+            display-name = "Layer-Tap";
+        };
+
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <100>;
-            quick-tap-ms = <50>;
-            require-prior-idle-ms = <50>;
+            quick-tap-ms = <20>;
+            require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
+            display-name = "Hold-Tap";
         };
 
         td_tg3: tap_toggle_3 {
@@ -48,28 +70,28 @@
         td_4x_up: tap_4x_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <20>;
             bindings = <&kp UP>, <&U_4x>;
         };
 
         td_4x_down: tap_4x_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <20>;
             bindings = <&kp DOWN>, <&D_4x>;
         };
 
         td_4x_left: tap_4x_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <20>;
             bindings = <&kp LEFT>, <&L_4x>;
         };
 
         td_4x_right: tap_4x_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <20>;
             bindings = <&kp RIGHT>, <&R_4x>;
         };
     };
@@ -160,8 +182,8 @@
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
-        &kp Z       &kp X       &kp C   &kp V          &ht LALT B          &ht RSHIFT N    &ht RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &td_sl5        &ht LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
+                                        &td_sl5        &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
         >;
     };
 
@@ -180,9 +202,9 @@
     move {
         label = "Move";
         bindings = <
-        &trans      &trans      &trans   &trans          &kp Y         &trans           &L_4x           &kp UP      &R_4x         &trans
-        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT        &kp DOWN    &kp RIGHT     &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans      &trans        &mo 6 
+        &trans      &trans      &trans   &trans          &kp Y         &trans           &trans          &td_4x_up       &trans         &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &td_4x_left     &td_4x_down     &td_4x_right   &msc SCRL_DOWN 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans          &trans          &trans         &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
