@@ -85,7 +85,7 @@
             label = "U_4x";
         };
 
-        Lang_switch: L_switch {
+        L_switch: L_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
@@ -95,7 +95,7 @@
             label = "L_switch";
         };    
 
-        Lang_JA: L_JA {
+        L_JA: L_JA {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
@@ -107,7 +107,7 @@
             label = "L_JA";
         };
 
-        Lang_KO: L_KO {
+        L_KO: L_KO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
@@ -119,7 +119,7 @@
             label = "L_KO";
         };
 
-        Lang_EN: L_EN {
+        L_EN: L_EN {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 	
@@ -131,7 +131,7 @@
             label = "L_EN";
         };
 
-        Lang_ZH: L_ZH {
+        L_ZH: L_ZH {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
@@ -143,7 +143,7 @@
             label = "L_ZH";
         };
 
-        Lang_NE: L_NE {
+        L_NE: L_NE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
@@ -262,8 +262,8 @@
     language {
         label = "Lang";
         bindings = <
-        &trans          &trans      &trans          &trans          &trans      &Lang_switch    &trans         &trans          &trans          &trans
-        &kp CAPS        &none       &none           &none           &none       &L_NE           &L_ZH          &L_EN           &L_KO           &L_JA
+        &trans          &trans      &trans          &trans          &trans      &L_switch    &trans         &trans          &trans          &trans
+        &kp CAPS        &none       &none           &none           &none       &L_NE        &L_ZH          &L_EN           &L_KO           &L_JA
         &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
                                                     &trans          &trans      &trans          &trans
         >;
