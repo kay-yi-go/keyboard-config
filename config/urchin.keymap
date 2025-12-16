@@ -164,7 +164,7 @@
                                         &td_sl5        &ht LSHIFT SPACE    &lt 1 ENTER     &td_tg3
         >;
     };
-pppp
+
     // Numbers and symbols
     num_sym {
         label = "Num";
