@@ -25,9 +25,9 @@
          mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <100>;
+            quick-tap-ms = <50>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
@@ -36,9 +36,9 @@
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <100>;
+            quick-tap-ms = <50>;
             bindings = <&mo>, <&kp>;
             require-prior-idle-ms = <0>;
             display-name = "Layer-Tap";
@@ -48,8 +48,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <50>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
             display-name = "Hold-Tap";
@@ -184,8 +184,8 @@
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
-        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &ht RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &td_sl5        &ht LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
+                                        &td_sl5        &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
         >;
     };
 
