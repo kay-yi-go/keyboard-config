@@ -55,29 +55,18 @@
             display-name = "Hold-Tap";
         };
 
-        ht_td: ht_in_td {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <100>;
-            require-prior-idle-ms = <0>;
-            bindings = <&kp>, <&kp>;
-            display-name = "HT-in-TD";
-        };
-
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <50>;
-            bindings = <&lt 2 TAB>, <&tog 3>;
+            bindings = <&trans>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <50>;
-            bindings = <&ht_td LSHIFT SPACE>, <&sl 5>;
+            bindings = <&trans>, <&sl 5>;
         };
     };
 
@@ -121,12 +110,22 @@
             key-positions = <32 33>;
         };
 
+        Switch_L3 {
+            bindings = <&tog 3>;
+            key-positions = <30 31>;
+            timeout-ms = <25>;
+        };
+
         Switch_L4 {
             bindings = <&sl 4>;
             key-positions = <31 32>;
         };
 
-
+        Switch_L5 {
+            bindings = <&sl 5>;
+            key-positions = <30 33>;
+        };
+        
         Sys_reset {
             bindings = <&sys_reset>;
             key-positions = <20 24>;
@@ -150,7 +149,7 @@
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
         &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &ht LCTRL BSPC        &td_sl5      &lt 1 ENTER     &td_tg3
+                                        &ht LCTRL BSPC &ht LSHIFT SPACE    &lt 1 ENTER     &lt 2 TAB
         >;
     };
 
@@ -160,7 +159,7 @@
         bindings = <
         &kp GRAVE   &kp ESC     &trans  &trans          &trans         &kp BSLH        &kp LBKT         &kp RBKT        &kp MINUS       &kp EQUAL 
         &kp N1      &kp N2      &kp N3  &kp N4          &kp N5         &kp N6          &kp N7           &kp N8          &kp N9          &kp N0
-        &trans      &trans      &trans  &trans          &trans         &trans          &trans           &trans          &kp DEL         &kp APOS
+        &trans      &trans      &trans  &trans          &trans         &td_sl5         &trans           &trans          &kp DEL         &kp APOS
                                         &trans          &trans         &trans          &trans
         >;
     };
@@ -171,7 +170,7 @@
         bindings = <
         &trans      &trans      &trans   &trans          &kp Y         &trans           &U_4x          &kp UP       &D_4x         &trans
         &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT       &kp DOWN     &kp RIGHT     &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans         &trans       &trans        &mo 6 
+        &trans      &trans      &trans   &trans          &kp LWIN      &td_tg3           &trans         &trans       &trans        &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
