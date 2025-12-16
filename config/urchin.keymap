@@ -59,14 +59,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <50>;
-            bindings = <&trans>, <&tog 3>;
+            bindings = <&none>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <50>;
-            bindings = <&trans>, <&sl 5>;
+            bindings = <&none>, <&sl 5>;
         };
     };
 
