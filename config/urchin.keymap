@@ -58,7 +58,7 @@
         ht_td: ht_in_td {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <100>;
             quick-tap-ms = <100>;
             require-prior-idle-ms = <0>;
