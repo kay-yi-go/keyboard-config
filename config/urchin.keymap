@@ -94,6 +94,67 @@
                 <&macro_release>, <&kp LALT>;
             label = "L_switch";
         };    
+
+        Lang_JA: L_JA {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp N0>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_JA";
+        };
+
+        Lang_KO: L_KO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp N9>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_KO";
+        };
+
+        Lang_EN: L_EN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 	
+                <&macro_press>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp N8>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_EN";
+        };
+
+        Lang_ZH: L_ZH {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp N7>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_ZH";
+        };
+
+        Lang_NE: L_NE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_tap>, <&kp N6>,
+                <&macro_release>, <&kp LSHIFT>,
+                <&macro_release>, <&kp LALT>;
+            label = "L_NE";
+        };
+
     };
 
     combos {
