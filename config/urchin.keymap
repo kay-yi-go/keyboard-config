@@ -25,8 +25,9 @@
          mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <100>;
+            quick-tap-ms = <20>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
@@ -37,6 +38,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <100>;
+            quick-tap-ms = <20>;
             bindings = <&mo>, <&kp>;
             require-prior-idle-ms = <0>;
             display-name = "Layer-Tap";
@@ -45,7 +47,7 @@
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <100>;
             quick-tap-ms = <20>;
             require-prior-idle-ms = <0>;
@@ -64,7 +66,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <20>;
-            bindings = <&ht LCTRL BSPC>, <&sl 5>;
+            bindings = <&mt LCTRL BSPC>, <&sl 5>;
         };
 
         td_4x_up: tap_4x_up {
@@ -182,8 +184,8 @@
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
-        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &td_sl5        &mt LSHIFT SPACE    &lt 1 ENTER     &td_tg3
+        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &ht RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
+                                        &td_sl5        &ht LSHIFT SPACE    &lt 1 ENTER     &td_tg3
         >;
     };
 
