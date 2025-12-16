@@ -58,15 +58,15 @@
         td_tg3: tap_toggle_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
-            bindings = <&none>, <&tog 3>;
+            tapping-term-ms = <100>;
+            bindings = <&kp X>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
-            bindings = <&none>, <&sl 5>;
+            tapping-term-ms = <100>;
+            bindings = <&kp X>, <&sl 5>;
         };
     };
 
