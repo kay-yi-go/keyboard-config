@@ -42,14 +42,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <100>;
-            bindings = <&none>, <&tog 3>;
+            bindings = <&mo 0>, <&tog 3>;
         };
 
         td_sl5: tap_stickyl_5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <100>;
-            bindings = <&none>, <&sl 5>;
+            bindings = <&mo 0>, <&sl 5>;
         };
     };
 
@@ -192,7 +192,7 @@
         bindings = <
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
-        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
+        &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &td_tg3       &kp DOT         &kp SLASH
                                         &mt LCTRL BSPC &mt LSHIFT TAB      &lt 1 SPACE     &lt 2 ENTER
         >;
     };
