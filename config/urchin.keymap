@@ -248,8 +248,8 @@
         bindings = <
         &trans          &trans      &trans          &trans          &trans      &L_switch    &trans         &trans          &trans          &trans
         &kp CAPS        &none       &none           &none           &none       &L_NE        &L_ZH          &L_EN           &L_KO           &L_JA
-        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1       &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
-                                                    &trans          &trans      &trans          &trans
+        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1    &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
+                                                    &trans          &trans      &trans       &trans
         >;
     };
 
