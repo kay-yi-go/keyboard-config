@@ -12,6 +12,7 @@
 
 // Layer definitions
 
+
 #define BASE 0
 #define NUM 1
 #define MOVE 2
@@ -161,6 +162,7 @@
         Switch_L4 {
             bindings = <&sl 4>;
             key-positions = <31 32>;
+            timeout-ms = <25>;
         };
 
         Switch_L5 {
@@ -191,7 +193,7 @@
         &kp Q       &kp W       &kp E   &kp R          &kp T               &kp Y           &kp U            &kp I           &kp O           &kp P 
         &kp A       &kp S       &kp D   &kp F          &kp G               &kp H           &kp J            &kp K           &kp L           &kp SEMICOLON
         &kp Z       &kp X       &kp C   &kp V          &mt LALT B          &mt RSHIFT N    &mt RALT M       &kp COMMA       &kp DOT         &kp SLASH
-                                        &mt LCTRL TAB  &mt LSHIFT BSPC     &lt 1 SPACE     &lt 2 ENTER
+                                        &mt LCTRL BSPC &mt LSHIFT TAB      &lt 1 SPACE     &lt 2 ENTER
         >;
     };
 
