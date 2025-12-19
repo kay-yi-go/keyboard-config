@@ -251,8 +251,8 @@
     language {
         label = "Lang";
         bindings = <
-        &INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &kp LANG2       &trans          &trans
-        &INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LANG1       &kp LS(CAPS)    &kp CAPS
+        &kp INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &kp LANG2       &trans          &trans
+        &kp INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LANG1       &kp LS(CAPS)    &kp CAPS
         &L_NE           &L_ZH       &trans          &trans          &trans      &trans       &trans       &L_EN           &L_KO           &L_JA
                                                     &trans          &trans      &trans       &trans
         >;
