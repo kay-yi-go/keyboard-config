@@ -85,7 +85,11 @@
                 <&macro_press>, <&kp LSHIFT>,
                 <&macro_tap>, <&kp N0>,
                 <&macro_release>, <&kp LSHIFT>,
-                <&macro_release>, <&kp LALT>;
+                <&macro_release>, <&kp LALT>,
+                <&macro_press>, <&kp LSHIFT>,
+                <&macro_press>, <&kp CAPS>,
+                <&macro_release>, <&kp CAPS>,
+                <&macro_release>, <&kp LSHIFT>;
             label = "L_JA";
         };
 
@@ -97,7 +101,9 @@
                 <&macro_press>, <&kp LSHIFT>,
                 <&macro_tap>, <&kp N9>,
                 <&macro_release>, <&kp LSHIFT>,
-                <&macro_release>, <&kp LALT>;
+                <&macro_release>, <&kp LALT>,
+                <&macro_press>, <&kp LANG1>,
+                <&macro_release>, <&kp LANG1>;
             label = "L_KO";
         };
 
@@ -202,7 +208,7 @@
         bindings = <
         &kp GRAVE   &kp ESC     &trans  &trans          &trans         &kp BSLH        &kp LBKT         &kp RBKT        &kp MINUS       &kp EQUAL 
         &kp N1      &kp N2      &kp N3  &kp N4          &kp N5         &kp N6          &kp N7           &kp N8          &kp N9          &kp N0
-        &trans      &trans      &trans  &trans          &trans         &trans          &kp DEL          &td_sl5         &kp PLUS        &kp APOS
+        &trans      &trans      &trans  &trans          &trans         &td_sl5         &mo 5            &kp DEL         &kp PLUS        &kp APOS
                                         &trans          &trans         &trans          &trans
         >;
     };
@@ -245,14 +251,14 @@
     language {
         label = "Lang";
         bindings = <
-        &trans          &trans      &trans          &trans          &trans      &L_switch    &trans         &trans          &trans          &trans
-        &kp CAPS        &none       &none           &none           &none       &L_NE        &L_ZH          &L_EN           &L_KO           &L_JA
-        &kp LS(CAPS)    &trans      &trans          &trans          &trans      &kp LANG1    &kp LANG2      &kp INT4        &kp INT5        &kp LANG5
+        &INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &kp LANG2       &trans          &trans
+        &INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LANG1       &kp LS(CAPS)    &kp CAPS
+        &L_NE           &L_ZH       &trans          &trans          &trans      &trans       &trans       &L_EN           &L_KO           &L_JA
                                                     &trans          &trans      &trans       &trans
         >;
     };
 
-    // momentary navigation
+    // navigation
     navigation {
         label = "Nav";
         bindings = <
