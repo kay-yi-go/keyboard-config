@@ -155,14 +155,13 @@
 
         Switch_L2 {
             bindings = <&tog 2>;
-            key-positions = <32 33>;
+            key-positions = <30 31>;
             timeout-ms = <25>;
         };
 
-
         Switch_L3 {
             bindings = <&tog 3>;
-            key-positions = <30 31>;
+            key-positions = <32 33>;
             timeout-ms = <25>;
         };
 
