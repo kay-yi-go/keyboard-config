@@ -14,8 +14,8 @@
 
 #define BASE 0
 #define NUM 1
-#define MOVE 2
-#define POINT 3
+#define POINT 2
+#define MOVE 3
 #define SETTINGS 4
 #define LANG 5
 #define NAV 6
@@ -48,7 +48,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&none>, <&sl 5>;
+            bindings = <&none>, <&tog 5>;
         };
     };
 
@@ -156,6 +156,7 @@
         Switch_L2 {
             bindings = <&tog 2>;
             key-positions = <32 33>;
+            timeout-ms = <25>;
         };
 
 
@@ -208,32 +209,33 @@
         bindings = <
         &kp GRAVE   &kp ESC     &trans  &trans          &trans         &kp BSLH        &kp LBKT         &kp RBKT        &kp MINUS       &kp EQUAL 
         &kp N1      &kp N2      &kp N3  &kp N4          &kp N5         &kp N6          &kp N7           &kp N8          &kp N9          &kp N0
-        &trans      &trans      &trans  &trans          &trans         &td_sl5         &mo 5            &kp DEL         &kp PLUS        &kp APOS
+        &trans      &trans      &trans  &trans          &kp LWIN       &td_sl5         &mo 5            &kp DEL         &kp PLUS        &kp APOS
                                         &trans          &trans         &trans          &trans
         >;
     };
 
-    // moves cursor
-    move {
-        label = "Move";
-        bindings = <
-        &trans      &trans      &trans   &trans          &kp Y         &trans           &U_4x          &kp UP       &D_4x         &trans
-        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT       &kp DOWN     &kp RIGHT     &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &trans         &td_tg3      &trans        &mo 6 
-                                         &trans          &trans        &trans           &trans
-        >;
-    };
 
     // mouse pointing
     pointing {
         label = "Point";
         bindings = <
-        &trans      &trans      &trans   &trans          &trans        &trans           &trans          &mmv MOVE_UP      &trans            &trans
+        &trans      &trans      &trans   &trans          &trans        &trans           &trans          &mmv MOVE_UP      &trans            &none
         &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &msc SCRL_DOWN
-        &trans      &trans      &trans   &trans          &trans        &mkp MB2         &trans          &trans            &trans            &trans 
+        &trans      &trans      &trans   &trans          &trans        &mkp MB2         &trans          &kp DEL           &trans            &trans 
                                          &trans          &trans        &mkp MB1         &trans
         >;
+    };
 
+
+    // moves cursor
+    move {
+        label = "Move";
+        bindings = <
+        &trans      &trans      &trans   &trans          &trans        &trans           &U_4x          &kp UP       &D_4x         &trans
+        &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT       &kp DOWN     &kp RIGHT     &msc SCRL_DOWN 
+        &trans      &trans      &trans   &trans          &trans        &trans           &trans         &td_tg3      &trans        &mo 6 
+                                         &trans          &trans        &trans           &trans
+        >;
     };
 
     // bluetooth, system, and functions
@@ -253,8 +255,8 @@
         bindings = <
         &kp INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &kp LANG2       &trans          &trans
         &kp INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LANG1       &kp LS(CAPS)    &kp CAPS
-        &L_NE           &L_ZH       &trans          &trans          &trans      &trans       &trans       &L_EN           &L_KO           &L_JA
-                                                    &trans          &trans      &trans       &trans
+        &L_NE              &L_ZH       &trans          &trans          &trans      &tog 1       &trans       &L_EN           &L_KO           &L_JA
+                                                       &trans          &trans      &trans       &trans
         >;
     };
 
