@@ -249,7 +249,7 @@
         &kp F1      &kp F2              &kp F3          &kp F4              &kp F5            &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
         &bt BT_NXT  &bt BT_SEL 0        &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_CLR        &none           &none           &none           &kp F11         &kp F12  
         &none       &none               &kp LG(P)       &kp LG(LS(S))       &none             &kp C_BRI_DN    &kp C_BRI_UP    &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP
-                                                        &trans              &trans            &trans           &trans
+                                                        &trans              &trans            &trans          &trans
         >; 
     };
 
@@ -257,8 +257,8 @@
     language {
         label = "Lang";
         bindings = <
-        &kp INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &trans          &trans          &LANG2
-        &kp INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LS(CAPS)    &kp CAPS        &LANG1
+        &kp INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &trans          &trans          &kp LANG2
+        &kp INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LS(CAPS)    &kp CAPS        &kp LANG1
         &L_NE              &L_ZH       &trans          &trans          &trans      &td_sl5      &trans       &L_JA           &L_KO           &L_EN
                                                        &trans          &trans      &trans       &trans
         >;
