@@ -237,7 +237,7 @@
         bindings = <
         &trans      &trans      &trans   &trans          &trans        &trans           &U_4x          &kp UP       &D_4x         &trans
         &trans      &trans      &trans   &trans          &trans        &msc SCRL_UP     &kp LEFT       &kp DOWN     &kp RIGHT     &msc SCRL_DOWN 
-        &trans      &trans      &trans   &trans          &kp LWIN      &trans          &trans         &td_tg2      &trans        &mo 6 
+        &trans      &trans      &trans   &trans          &kp LWIN      &trans           &kp F6         &td_tg2      &trans        &mo 6 
                                          &trans          &trans        &trans           &trans
         >;
     };
