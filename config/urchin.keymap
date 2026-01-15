@@ -245,9 +245,9 @@
     language {
         label = "Lang";
         bindings = <
-        &kp INT_HENKAN     &trans      &trans          &trans          &trans      &L_switch    &trans       &trans          &trans          &kp LANG2
-        &kp INT_MUHENKAN   &none       &none           &none           &none       &trans       &trans       &kp LS(CAPS)    &kp CAPS        &kp LANG1
-        &L_NE              &L_ZH       &trans          &trans          &trans      &td_sl5      &trans       &L_JA           &L_KO           &L_EN
+        &kp INT_HENKAN     &kp 7       &kp 8          &kp 9          &L_NE      &L_switch    &trans       &trans          &trans          &kp LANG2
+        &kp INT_MUHENKAN   &kp 4       &kp 5          &kp 6          &L_ZH      &trans       &trans       &kp LS(CAPS)    &kp CAPS        &kp LANG1
+        &kp COMMA          &kp 1       &kp 2          &kp 3          &kp 0      &td_sl5      &trans       &L_JA           &L_KO           &L_EN
                                                        &trans          &trans      &trans       &trans
         >;
     };
