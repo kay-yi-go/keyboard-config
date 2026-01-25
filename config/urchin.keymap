@@ -160,12 +160,7 @@
 
         Toggle_L4 {
             bindings = <&tog 4>;
-            key-positions = <30 32>;
-        };
-
-        Switch_L5 {
-            bindings = <&sl 5>;
-            key-positions = <30 33>;
+            key-positions = <30 31 32>;
         };
         
         Sys_reset {
@@ -248,7 +243,7 @@
         &kp INT_HENKAN     &kp N7      &kp N8         &kp N9         &L_NE      &L_switch    &trans       &trans          &trans          &kp LANG2
         &kp INT_MUHENKAN   &kp N4      &kp N5         &kp N6         &L_ZH      &trans       &trans       &kp LS(CAPS)    &kp CAPS        &kp LANG1
         &kp COMMA          &kp N1      &kp N2         &kp N3         &kp N0      &td_sl5      &trans       &L_JA           &L_KO           &L_EN
-                                                       &trans          &trans      &trans       &trans
+                                                      &trans         &trans      &trans       &trans
         >;
     };
 
