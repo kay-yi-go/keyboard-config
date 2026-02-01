@@ -155,7 +155,7 @@
 
         Switch_L4 {
             bindings = <&sl 4>;
-            key-positions = <31 32>;
+            key-positions = <30 31>;
         };
 
         Toggle_L4 {
